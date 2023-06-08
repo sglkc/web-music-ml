@@ -11,8 +11,8 @@ export default function Metadata(props) {
   return (
     <tr className="b-b-1">
       <td></td>
-      <td className="pb-4" colSpan={reducer.image ? 9 : 8}>
-        <div className="grid grid-cols-2 gap-x-8 gap-y-2">
+      <td className="pb-4" colSpan={reducer.image ? 10 : 9}>
+        <div className="mx-auto max-w-160 grid grid-cols-2 gap-x-8 gap-y-2">
           { infos.map((info, i) => (
             <label className="relative flex items-center" key={i}>
               <span className="flex-grow">{ info }</span>
@@ -23,7 +23,7 @@ export default function Metadata(props) {
                 value={props[info.toLowerCase()]}
               />
               <span className="absolute right-0">
-                { props[info.toLowerCase()].toFixed(2) }%
+                { (props[info.toLowerCase()] * 100).toPrecision(2) }%
               </span>
             </label>
           ))}

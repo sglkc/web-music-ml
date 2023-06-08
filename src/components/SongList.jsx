@@ -9,7 +9,7 @@ export default function SongList() {
   return (
     <>
       <h1 className="text-xl font-bold">Song List</h1>
-      <div className="max-h-1/3 overflow-y-auto">
+      <div className="max-h-1/3 max-w-[92ch] overflow-y-auto">
         <table>
           <thead>
             <tr>
@@ -20,6 +20,7 @@ export default function SongList() {
               { reducer.image &&
               <th className="p-2 sticky top-0 bg-gray-100 z-1">Image</th>
               }
+              <th className="p-2 sticky top-0 bg-gray-100 z-1">Lang</th>
               <th className="p-2 sticky top-0 bg-gray-100 z-1">Genres</th>
               <th className="p-2 sticky top-0 bg-gray-100 z-1">Length</th>
               <th className="p-2 sticky top-0 bg-gray-100 z-1">Tempo</th>

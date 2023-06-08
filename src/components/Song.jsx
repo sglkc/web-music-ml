@@ -26,7 +26,7 @@ export default function Song(props) {
 
   return (
     <>
-      <tr>
+      <tr className={!metadata && 'b-b-1'}>
         <Td>{ props.no }</Td>
         <Td>{ props.title }</Td>
         <Td>{ props.artist }</Td>
@@ -53,9 +53,12 @@ export default function Song(props) {
           />
         </Td>
         }
+        <Td>{ props.language }</Td>
         <Td>
           <div className="flex flex-wrap gap-1">
-            { props.genre.map((genre) => <span className="p-1 b-1">{ genre }</span>) }
+            { props.genre.map((genre, i) => (
+              <span className="p-1 b-1" key={i}>{ genre }</span>
+            ))}
           </div>
         </Td>
         <Td>{ props.length }</Td>

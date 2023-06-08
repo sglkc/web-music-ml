@@ -1,5 +1,6 @@
 import { useReducer } from 'react'
 import { Context, Reducer } from './func/Reducer'
+import Clustering from './components/Clustering'
 import Recommender from './components/Recommender'
 import SongList from './components/SongList'
 import TableOptions from './components/TableOptions'
@@ -30,6 +31,7 @@ export default function App() {
       <div className="pt-4 pb-16 font-sans flex flex-col justify-center items-center gap-4">
         <RecommendOptions />
         <Recommender />
+        <Clustering />
         <TableOptions />
         <SongList />
       </div>

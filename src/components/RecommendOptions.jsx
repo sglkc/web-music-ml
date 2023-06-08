@@ -30,7 +30,7 @@ export default function RecommendOptions() {
           />
           <span className="mx-2">{ info }</span>
           <span className="absolute">
-            { reducer.info[info.toLowerCase()].toFixed(2) }%
+            { (reducer.info[info.toLowerCase()] * 100).toPrecision(3) }%
           </span>
         </label>
       ))}
