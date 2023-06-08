@@ -1,5 +1,5 @@
 import { useReducer, useState } from 'react'
-import { OptionContext, OptionReducer } from './func/OptionReducer'
+import { Context, Reducer } from './func/Reducer'
 import SongList from './components/SongList'
 import knn from 'alike'
 import dataset from './dataset'
@@ -27,29 +27,30 @@ const taste = {
   liveness: 0.16
 }
 
-const defaultOptions = {
-  embed: false,
-  image: false
-}
-
 export default function App() {
   const [songs, setSongs] = useState(dataset)
-  const [options, dispatch] = useReducer(OptionReducer, defaultOptions)
+  const defaults = {
+    embed: false,
+    image: false,
+    songs
+  }
+
+  const [reducer, dispatch] = useReducer(Reducer, defaults)
 
   const recommend = () => {
     setSongs(knn(taste, dataset, knnConfig))
   }
 
   return (
-    <OptionContext.Provider value={{ options, dispatch }}>
+    <Context.Provider value={{ reducer, dispatch }}>
       <div className="p-8 font-sans flex flex-col justify-center items-center gap-4">
         <div className="flex flex-col gap-1">
-          <h2 className="text-lg font-semibold text-center">Table Options</h2>
+          <h2 className="text-lg font-semibold text-center">Table s</h2>
           <label>
             <input
               type="checkbox"
               defaultChecked={false}
-              onChange={() => dispatch({ ...options, embed: !options.embed})}
+              onChange={() => dispatch({ ...reducer, embed: !reducer.embed})}
             />
             <span> Toggle song embed</span>
           </label>
@@ -57,15 +58,15 @@ export default function App() {
             <input
               type="checkbox"
               defaultChecked={false}
-              onChange={() => dispatch({ ...options, image: !options.image})}
+              onChange={() => dispatch({ ...reducer, image: !reducer.image})}
             />
             <span> Show song images</span>
           </label>
         </div>
         <button onClick={recommend}>RECOMMEDN!</button>
         <h1 className="text-xl">Music Recommender</h1>
-        <SongList songs={songs} />
+        <SongList />
       </div>
-    </OptionContext.Provider>
+    </Context.Provider>
   )
 }

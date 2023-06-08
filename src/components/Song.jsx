@@ -1,10 +1,10 @@
 import { useContext } from 'react'
-import { OptionContext } from '../func/OptionReducer'
+import { Context } from '../func/Reducer'
 
 const Td = (props) => <td className="p-2" {...props} />
 
 export default function Song(props) {
-  const { options } = useContext(OptionContext)
+  const { reducer } = useContext(Context)
 
   return (
     <tr>
@@ -12,20 +12,20 @@ export default function Song(props) {
       <Td>{ props.title }</Td>
       <Td>{ props.artist }</Td>
       <Td>
-        { options.embed ?
+        { reducer.embed ?
           <iframe
             src={props.spotify_url.replace('track/', 'embed/track/')}
             allow="encrypted-media"
             width="100%"
             height="80"
             loading="lazy"
-            allowTransparency="true"
+            allowtransparency="true"
           />
           :
           <a className="underline" href={ props.spotify_url }>Spotify</a>
         }
       </Td>
-      { options.image &&
+      { reducer.image &&
       <Td>
         <img
           className="aspect-square object-cover transition-transform transition-duration-350 hover:scale-250"
