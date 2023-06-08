@@ -1,35 +1,71 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useReducer, useState } from 'react'
+import { OptionContext, OptionReducer } from './func/OptionReducer'
+import SongList from './components/SongList'
+import knn from 'alike'
+import dataset from './dataset'
 
-function App() {
-  const [count, setCount] = useState(0)
-
-  return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+const knnConfig = {
+  k: 10,
+  weights: {
+    popularity: 0.14,
+    energy: 0.14,
+    speechiness: 0.14,
+    instrumentalness: 0.14,
+    danceability: 0.14,
+    positiveness: 0.14,
+    liveness: 0.14
+  },
 }
 
-export default App
+const taste = {
+  popularity: 0.67,
+  energy: 0.75,
+  speechiness: 0.03,
+  instrumentalness: 0,
+  danceability: 0.42,
+  positiveness: 0.44,
+  liveness: 0.16
+}
+
+const defaultOptions = {
+  embed: false,
+  image: false
+}
+
+export default function App() {
+  const [songs, setSongs] = useState(dataset)
+  const [options, dispatch] = useReducer(OptionReducer, defaultOptions)
+
+  const recommend = () => {
+    setSongs(knn(taste, dataset, knnConfig))
+  }
+
+  return (
+    <OptionContext.Provider value={{ options, dispatch }}>
+      <div className="p-8 font-sans flex flex-col justify-center items-center gap-4">
+        <div className="flex flex-col gap-1">
+          <h2 className="text-lg font-semibold text-center">Table Options</h2>
+          <label>
+            <input
+              type="checkbox"
+              defaultChecked={false}
+              onChange={() => dispatch({ ...options, embed: !options.embed})}
+            />
+            <span> Toggle song embed</span>
+          </label>
+          <label>
+            <input
+              type="checkbox"
+              defaultChecked={false}
+              onChange={() => dispatch({ ...options, image: !options.image})}
+            />
+            <span> Show song images</span>
+          </label>
+        </div>
+        <button onClick={recommend}>RECOMMEDN!</button>
+        <h1 className="text-xl">Music Recommender</h1>
+        <SongList songs={songs} />
+      </div>
+    </OptionContext.Provider>
+  )
+}
