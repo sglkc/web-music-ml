@@ -1045,6 +1045,255 @@ export default [
     liveness: 36
   },
 
+  {
+    title: 'Narcos',
+    artist: 'Migos',
+    spotify_url: 'https://open.spotify.com/track/0wbnC9AUenxp613TYaJsGK',
+    image_url: 'https://i.scdn.co/image/ab67616d0000b2739c188c494d8bfaf895411890',
+    language: 'EN',
+    genre: ['rap', 'hip hop'],
+    length: '4:15',
+    tempo: 125,
+    skey: 'C Major',
+    loudness: -7,
+    popularity: 72,
+    energy: 59,
+    speechiness: 13,
+    instrumentalness: 0,
+    danceability: 94,
+    positiveness: 24,
+    liveness: 13
+  },
+
+
+  {
+    title: 'Open It Up',
+    artist: 'Migos',
+    spotify_url: 'https://open.spotify.com/track/2LOkdHHNKdEx24cQELBaD8',
+    image_url: 'https://i.scdn.co/image/ab67616d0000b2739c188c494d8bfaf895411890',
+    language: 'EN',
+    genre: ['rap', 'hip hop'],
+    length: '4:05',
+    tempo: 125,
+    skey: 'A#/Bb Minor',
+    loudness: -4,
+    popularity: 65,
+    energy: 87,
+    speechiness: 6,
+    instrumentalness: 0,
+    danceability: 77,
+    positiveness: 47,
+    liveness: 41
+  },
+
+
+  {
+    title: 'Alright',
+    artist: 'Kendrick Lamar',
+    spotify_url: 'https://open.spotify.com/track/3iVcZ5G6tvkXZkZKlMpIUs',
+    image_url: 'https://i.scdn.co/image/ab67616d0000b273cdb645498cd3d8a2db4d05e1',
+    language: 'EN',
+    genre: ['rap', 'hip hop'],
+    length: '3:39',
+    tempo: 110,
+    skey: 'G Major',
+    loudness: -6,
+    popularity: 83,
+    energy: 77,
+    speechiness: 24,
+    instrumentalness: 0,
+    danceability: 80,
+    positiveness: 56,
+    liveness: 24
+  },
+
+
+  {
+    title: 'Rap God',
+    artist: 'Eminem',
+    spotify_url: 'https://open.spotify.com/track/6or1bKJiZ06IlK0vFvY75k',
+    image_url: 'https://i.scdn.co/image/ab67616d0000b273cb66bcc14c6f857c127d5969',
+    language: 'EN',
+    genre: ['rap', 'hip hop'],
+    length: '6:03',
+    tempo: 148,
+    skey: 'G Major',
+    loudness: -3,
+    popularity: 79,
+    energy: 84,
+    speechiness: 31,
+    instrumentalness: 0,
+    danceability: 71,
+    positiveness: 63,
+    liveness: 80
+  },
+
+
+  {
+    title: 'HUMBLE',
+    artist: 'Kendrick Lamar',
+    spotify_url: 'https://open.spotify.com/track/7KXjTSCq5nL1LoYtL7XAwS',
+    image_url: 'https://i.scdn.co/image/ab67616d0000b2738b52c6b9bc4e43d873869699',
+    language: 'EN',
+    genre: ['rap', 'hip hop'],
+    length: '2:57',
+    tempo: 150,
+    skey: 'C#/Db Minor',
+    loudness: -7,
+    popularity: 86,
+    energy: 62,
+    speechiness: 10,
+    instrumentalness: 0,
+    danceability: 91,
+    positiveness: 42,
+    liveness: 10
+  },
+
+
+  {
+    title: 'Stan',
+    artist: 'Eminem',
+    spotify_url: 'https://open.spotify.com/track/3UmaczJpikHgJFyBTAJVoz',
+    image_url: 'https://i.scdn.co/image/ab67616d0000b273dbb3dd82da45b7d7f31b1b42',
+    language: 'EN',
+    genre: ['rap', 'hip hop'],
+    length: '6:44',
+    tempo: 80,
+    skey: 'F#/Gb Minor',
+    loudness: -4,
+    popularity: 85,
+    energy: 77,
+    speechiness: 24,
+    instrumentalness: 0,
+    danceability: 78,
+    positiveness: 51,
+    liveness: 52
+  },
+
+
+  {
+    title: 'Not Afraid',
+    artist: 'Eminem',
+    spotify_url: 'https://open.spotify.com/track/7Ie9W94M7OjPoZVV216Xus',
+    image_url: 'https://i.scdn.co/image/ab67616d0000b273c08d5fa5c0f1a834acef5100',
+    language: 'EN',
+    genre: ['rap', 'hip hop'],
+    length: '4:08',
+    tempo: 115,
+    skey: 'C Minor',
+    loudness: -1,
+    popularity: 82,
+    energy: 95,
+    speechiness: 26,
+    instrumentalness: 0,
+    danceability: 86,
+    positiveness: 67,
+    liveness: 21
+  },
+
+
+  {
+    title: 'Seven Nation Army',
+    artist: 'The White Stripes',
+    spotify_url: 'https://open.spotify.com/track/3dPQuX8Gs42Y7b454ybpMR',
+    image_url: 'https://i.scdn.co/image/ab67616d0000b273a69f71a8794e2d867a52f98f',
+    language: 'EN',
+    genre: ['rock','punk blues'],
+    length: '3:52',
+    tempo: 124,
+    skey: 'E Minor',
+    loudness: -8,
+    popularity: 86,
+    energy: 45,
+    speechiness: 7,
+    instrumentalness: 12,
+    danceability: 74,
+    positiveness: 28,
+    liveness: 34
+  },
+
+
+  {
+    title: 'Angeleyes',
+    artist: 'ABBA',
+    spotify_url: 'https://open.spotify.com/track/7rWgGyRK7RAqAAXy4bLft9',
+    image_url: 'https://i.scdn.co/image/ab67616d0000b273aa22899360d8ba6704732dec',
+    language: 'EN',
+    genre: ['disco', 'pop'],
+    length: '4:20',
+    tempo: 133,
+    skey: 'B Major',
+    loudness: -6,
+    popularity: 76,
+    energy: 92,
+    speechiness: 3,
+    instrumentalness: 0,
+    danceability: 72,
+    positiveness: 96,
+    liveness: 9
+  },
+
+
+  {
+    title: 'Dancing Queen',
+    artist: 'ABBA',
+    spotify_url: 'https://open.spotify.com/track/0GjEhVFGZW8afUYGChu3Rr',
+    image_url: 'https://i.scdn.co/image/ab67616d0000b27370f7a1b35d5165c85b95a0e0',
+    language: 'EN',
+    genre: ['pop', 'disco'],
+    length: '3:50',
+    tempo: 101,
+    skey: 'A Major',
+    loudness: -7,
+    popularity: 85,
+    energy: 87,
+    speechiness: 4,
+    instrumentalness: 34,
+    danceability: 65,
+    positiveness: 60,
+    liveness: 22
+  },
+
+
+  {
+    title: 'My Ordinary Life',
+    artist: 'The Living Tombstone',
+    spotify_url: 'https://open.spotify.com/track/6tMdpUXfT70TD6Eh3XfB1p',
+    image_url: 'https://i.scdn.co/image/ab67616d0000b27339be979ae33894ef46f263f9',
+    language: 'EN',
+    genre: ['pixel', 'otacore'],
+    length: '3:50',
+    tempo: 176,
+    skey: 'A Minor',
+    loudness: -5,
+    popularity: 81,
+    energy: 83,
+    speechiness: 4,
+    instrumentalness: 34,
+    danceability: 65,
+    positiveness: 60,
+    liveness: 22
+  },
+
+  {
+    title: 'I Got No Time',
+    artist: 'The Living Tombstone',
+    spotify_url: 'https://open.spotify.com/track/1ffKh2d1EzZlvuvVj2xpI9',
+    image_url: 'https://i.scdn.co/image/ab67616d0000b27353e1cd364a12e0bd8ac8f304',
+    language: 'EN',
+    genre: ['pixel', 'otacore'],
+    length: '2:46',
+    tempo: 180,
+    skey: 'G#/Ab Major',
+    loudness: -2,
+    popularity: 68,
+    energy: 90,
+    speechiness: 7,
+    instrumentalness: 0,
+    danceability: 35,
+    positiveness: 35,
+    liveness: 25
+  },
 
 ];
 

@@ -30,7 +30,7 @@ export default function App() {
     <Context.Provider value={{ reducer, dispatch }}>
       <div className="pt-4 pb-16 font-sans flex flex-col justify-center items-center gap-8">
         <Clustering />
-        <div className="flex gap-16">
+        <div className="flex md:flex-row flex-col md:gap-16 gap-8">
           <RecommendOptions />
           <div className="flex flex-col gap-4">
             <TableOptions />

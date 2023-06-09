@@ -8,7 +8,7 @@ export default function SongList() {
 
   return (
     <>
-      <div className="max-h-1/3 max-w-[92ch] overflow-y-auto">
+      <div className="lg:px-16 max-h-1/3 max-w-screen overflow-auto">
         <table>
           <thead>
             <tr>
