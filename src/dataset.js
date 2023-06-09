@@ -33,14 +33,14 @@ export default [
     length: '05:14',
     tempo: 78,
     skey: 'F# min',
-    loudness: -3.33,
-    popularity: 0.61,
-    energy: 0.65,
-    speechiness: 0.04,
+    loudness: -3,
+    popularity: 61,
+    energy: 65,
+    speechiness: 4,
     instrumentalness: 0,
-    danceability: 0.38,
-    positiveness: 0.33,
-    liveness: 0.14
+    danceability: 38,
+    positiveness: 33,
+    liveness: 14
   },
   {
     title: 'クリスマスソング',
@@ -52,14 +52,14 @@ export default [
     length: '05:40',
     tempo: 154,
     skey: 'E Maj',
-    loudness: -3.32,
-    popularity: 0.63,
-    energy: 0.7,
-    speechiness: 0.03,
+    loudness: -3,
+    popularity: 63,
+    energy: 7,
+    speechiness: 3,
     instrumentalness: 0,
-    danceability: 0.4,
-    positiveness: 0.42,
-    liveness: 0.12
+    danceability: 40,
+    positiveness: 42,
+    liveness: 12
   },
   {
     title: 'アイラブユー',
@@ -71,14 +71,14 @@ export default [
     length: '03:55',
     tempo: 78,
     skey: 'C# Maj',
-    loudness: -3.63,
-    popularity: 0.64,
-    energy: 0.62,
-    speechiness: 0.03,
+    loudness: -3,
+    popularity: 64,
+    energy: 62,
+    speechiness: 3,
     instrumentalness: 0,
-    danceability: 0.47,
-    positiveness: 0.46,
-    liveness: 0.14
+    danceability: 47,
+    positiveness: 46,
+    liveness:14
   },
   {
     title: 'HAPPY BIRTHDAY',
@@ -90,14 +90,14 @@ export default [
     length: '04:18',
     tempo: 146,
     skey: 'B Maj',
-    loudness: -4.37,
-    popularity: 0.69,
-    energy: 0.63,
-    speechiness: 0.03,
+    loudness: -4,
+    popularity: 69,
+    energy: 63,
+    speechiness: 3,
     instrumentalness: 0,
-    danceability: 0.48,
-    positiveness: 0.56,
-    liveness: 0.08
+    danceability: 48,
+    positiveness: 56,
+    liveness: 8
   },
   {
     title: '水平線',
@@ -109,14 +109,14 @@ export default [
     length: '04:45',
     tempo: 146,
     skey: 'A# Maj',
-    loudness: -3.55,
-    popularity: 0.67,
-    energy: 0.75,
-    speechiness: 0.03,
+    loudness: -3,
+    popularity: 67,
+    energy: 75,
+    speechiness: 3,
     instrumentalness: 0,
-    danceability: 0.42,
-    positiveness: 0.44,
-    liveness: 0.16
+    danceability: 42,
+    positiveness: 44,
+    liveness: 16
   },
 
   {
@@ -130,13 +130,13 @@ export default [
     tempo: 142,
     skey: 'B Minor',
     loudness: -5,
-    popularity: 0.55,
-    energy: 0.90,
-    speechiness: 0.3,
-    instrumentalness: 0.1,
-    danceability: 0.62,
-    positiveness: 0.84,
-    liveness: 0.29
+    popularity: 55,
+    energy: 90,
+    speechiness: 30,
+    instrumentalness: 1,
+    danceability: 62,
+    positiveness: 84,
+    liveness: 29
   },
 
 
@@ -151,13 +151,13 @@ export default [
     tempo: 154,
     skey: 'E Major',
     loudness: -7,
-    popularity: 0.58,
-    energy: 0.58,
-    speechiness: 0.3,
+    popularity: 58,
+    energy: 58,
+    speechiness: 3,
     instrumentalness: 0,
-    danceability: 0.34,
-    positiveness: 0.28,
-    liveness: 0.35
+    danceability: 34,
+    positiveness: 28,
+    liveness: 35
   },
 
 
@@ -172,13 +172,13 @@ export default [
     tempo: 123,
     skey: 'C Minor',
     loudness: -5,
-    popularity: 0.76,
-    energy: 0.63,
-    speechiness: 0.6,
+    popularity: 76,
+    energy: 63,
+    speechiness: 60,
     instrumentalness: 0,
-    danceability: 0.71,
-    positiveness: 0.46,
-    liveness: 0.14
+    danceability: 71,
+    positiveness: 46,
+    liveness: 14
   },
 
 
@@ -193,13 +193,13 @@ export default [
     tempo: 114,
     skey: 'F Minor',
     loudness: -4,
-    popularity: 0.87,
-    energy: 0.74,
-    speechiness: 0.5,
+    popularity: 87,
+    energy: 74,
+    speechiness: 50,
     instrumentalness: 0,
-    danceability: 0.77,
-    positiveness: 0.57,
-    liveness: 0.8
+    danceability: 77,
+    positiveness: 57,
+    liveness: 8
   },
 
 
@@ -214,13 +214,13 @@ export default [
     tempo: 168,
     skey: 'C Major',
     loudness: -5,
-    popularity: 0.87,
-    energy: 0.82,
-    speechiness: 0.4,
-    instrumentalness: 0.13,
-    danceability: 0.61,
-    positiveness: 0.29,
-    liveness: 0.15
+    popularity: 87,
+    energy: 82,
+    speechiness: 4,
+    instrumentalness: 13,
+    danceability: 61,
+    positiveness: 29,
+    liveness: 15
   },
 
   {
@@ -234,13 +234,13 @@ export default [
     tempo: 90,
     skey: 'D#/Eb Major',
     loudness: -3,
-    popularity: 0.76,
-    energy: 0.71,
-    speechiness: 0.3,
+    popularity: 76,
+    energy: 71,
+    speechiness: 3,
     instrumentalness: 0,
-    danceability: 0.51,
-    positiveness: 0.43,
-    liveness: 0.33
+    danceability: 51,
+    positiveness: 43,
+    liveness: 33
   },
 
   {
@@ -254,13 +254,13 @@ export default [
     tempo: 125,
     skey: 'A#Bb Minor',
     loudness: -4,
-    popularity: 0.90,
-    energy: 0.78,
-    speechiness: 0.13,
+    popularity: 90,
+    energy: 78,
+    speechiness: 13,
     instrumentalness: 0,
-    danceability: 0.78,
-    positiveness: 0.67,
-    liveness: 0.8
+    danceability: 78,
+    positiveness: 67,
+    liveness: 8
   },
 
 
@@ -275,13 +275,13 @@ export default [
     tempo: 140,
     skey: 'F#/Gb',
     loudness: -8,
-    popularity: 0.72,
-    energy: 0.43,
-    speechiness: 0.3,
-    instrumentalness: 0.1,
-    danceability: 0.34,
-    positiveness: 0.16,
-    liveness: 0.11
+    popularity: 72,
+    energy: 43,
+    speechiness: 3,
+    instrumentalness: 1,
+    danceability: 34,
+    positiveness: 16,
+    liveness: 11
   },
 
   {
@@ -295,13 +295,13 @@ export default [
     tempo: 123,
     skey: 'G#Ab Major',
     loudness: -6,
-    popularity: 0.64,
-    energy: 0.76,
-    speechiness: 0.05,
+    popularity: 64,
+    energy: 76,
+    speechiness: 5,
     instrumentalness: 0,
-    danceability: 0.75,
-    positiveness: 0.96,
-    liveness: 0.04
+    danceability: 75,
+    positiveness: 96,
+    liveness: 4
   },
 
   {
@@ -315,13 +315,13 @@ export default [
     tempo: 124,
     skey: 'A Minor',
     loudness: -8,
-    popularity: 0.85,
-    energy: 0.38,
-    speechiness: 0.04,
+    popularity: 85,
+    energy: 38,
+    speechiness: 4,
     instrumentalness: 0,
-    danceability: 0.84,
-    positiveness: 0.60,
-    liveness: 0.07
+    danceability: 84,
+    positiveness: 60,
+    liveness: 7
   },
 
   {
@@ -335,13 +335,13 @@ export default [
     tempo: 140,
     skey: 'E Minor',
     loudness: -5,
-    popularity: 0.77,
-    energy: 0.83,
-    speechiness: 0.07,
+    popularity: 77,
+    energy: 83,
+    speechiness: 7,
     instrumentalness: 0,
-    danceability: 0.67,
-    positiveness: 0.39,
-    liveness: 0.09
+    danceability: 67,
+    positiveness: 39,
+    liveness: 9
   },
 
   {
@@ -350,18 +350,18 @@ export default [
     spotify_url: 'https://open.spotify.com/track/13MF2TYuyfITClL1R2ei6e',
     image_url: 'https://i.scdn.co/image/ab67616d0000b273ff4ec21d7817138cabcc19bc',
     language: 'KR',
-    genre: ['k-pop', 'EDM', 'Hiphop'],
+    genre: ['k-pop', 'edm', 'Hiphop'],
     length: '4:00',
     tempo: 125,
     skey: 'F Minor',
     loudness: -3,
-    popularity: 0.79,
-    energy: 0.84,
-    speechiness: 0.06,
+    popularity: 79,
+    energy: 84,
+    speechiness: 6,
     instrumentalness: 0,
-    danceability: 0.66,
-    positiveness: 0.4,
-    liveness: 0.5
+    danceability: 66,
+    positiveness: 40,
+    liveness: 5
   },
 
 
@@ -371,23 +371,23 @@ export default [
     spotify_url: 'https://open.spotify.com/track/5zwwW9Oq7ubSxoCGyW1nbY',
     image_url: 'https://i.scdn.co/image/ab67616d0000b273002ef53878df1b4e91c15406',
     language: 'KR',
-    genre: ['k-pop', 'EDM', 'hip-hop'],
+    genre: ['k-pop', 'edm', 'hip-hop'],
     length: '3:06',
     tempo: 180,
     skey: 'E Major',
     loudness: -6,
-    popularity: 0.78,
-    energy: 0.73,
-    speechiness: 0.2,
+    popularity: 78,
+    energy: 73,
+    speechiness: 20,
     instrumentalness: 0,
-    danceability: 0.69,
-    positiveness: 0.71,
-    liveness: 0.22
+    danceability: 69,
+    positiveness: 71,
+    liveness: 22
   },
 
   {
     title: 'Beraksi',
-    artist: 'Nidji',
+    artist: 'Kotak',
     spotify_url: 'https://open.spotify.com/track/1x1zmEE1YLQLSlXkZr4dzv',
     image_url: 'https://i.scdn.co/image/ab67616d0000b27355fcbac77e9be79cffca62e4',
     language: 'ID',
@@ -396,13 +396,13 @@ export default [
     tempo: 106,
     skey: 'G Major',
     loudness: -3,
-    popularity: 0.49,
-    energy: 0.88,
-    speechiness: 0.03,
+    popularity: 49,
+    energy: 88,
+    speechiness: 3,
     instrumentalness: 0,
-    danceability: 0.62,
-    positiveness: 0.82,
-    liveness: 0.18
+    danceability: 62,
+    positiveness: 82,
+    liveness: 18
   },
 
   {
@@ -416,13 +416,13 @@ export default [
     tempo: 134,
     skey: 'F Major',
     loudness: -8,
-    popularity: 0.41,
-    energy: 0.86,
-    speechiness: 0.04,
+    popularity: 41,
+    energy: 86,
+    speechiness: 4,
     instrumentalness: 0,
-    danceability: 0.63,
-    positiveness: 0.65,
-    liveness: 0.33
+    danceability: 63,
+    positiveness: 65,
+    liveness: 33
   },
 
   {
@@ -436,13 +436,13 @@ export default [
     tempo: 175,
     skey: 'G#Ab Minor',
     loudness: -5,
-    popularity: 0.75,
-    energy: 0.71,
-    speechiness: 0.07,
+    popularity: 75,
+    energy: 71,
+    speechiness: 7,
     instrumentalness: 0,
-    danceability: 0.79,
-    positiveness: 0.96,
-    liveness: 0.1
+    danceability: 79,
+    positiveness: 96,
+    liveness: 10
   },
 
   {
@@ -456,13 +456,13 @@ export default [
     tempo: 116,
     skey: 'F Minor',
     loudness: -5,
-    popularity: 0.82,
-    energy: 0.69,
-    speechiness: 0.04,
+    popularity: 82,
+    energy: 69,
+    speechiness: 4,
     instrumentalness: 0,
-    danceability: 0.87,
-    positiveness: 0.94,
-    liveness: 0.32
+    danceability: 87,
+    positiveness: 94,
+    liveness: 32
   },
 
   {
@@ -476,13 +476,13 @@ export default [
     tempo: 109,
     skey: 'F Major',
     loudness: -5,
-    popularity: 0.85,
-    energy: 0.84,
-    speechiness: 0.04,
+    popularity: 85,
+    energy: 84,
+    speechiness: 4,
     instrumentalness: 0,
-    danceability: 0.64,
-    positiveness: 0.42,
-    liveness: 0.06
+    danceability: 64,
+    positiveness: 42,
+    liveness: 6
   },
 
   {
@@ -496,13 +496,13 @@ export default [
     tempo: 126,
     skey: 'D Minor',
     loudness: -6,
-    popularity: 0.74,
-    energy: 0.64,
-    speechiness: 0.03,
+    popularity: 74,
+    energy: 64,
+    speechiness: 3,
     instrumentalness: 0,
-    danceability: 0.71,
-    positiveness: 0.74,
-    liveness: 0.09
+    danceability: 71,
+    positiveness: 74,
+    liveness: 9
   },
 
   {
@@ -516,13 +516,13 @@ export default [
     tempo: 115,
     skey: 'C#Db Major',
     loudness: -7,
-    popularity: 0.68,
-    energy: 0.55,
-    speechiness: 0.04,
+    popularity: 68,
+    energy: 55,
+    speechiness: 4,
     instrumentalness: 0,
-    danceability: 0.54,
-    positiveness: 0.48,
-    liveness: 0.12
+    danceability: 54,
+    positiveness: 48,
+    liveness: 12
   },
 
   {
@@ -536,13 +536,13 @@ export default [
     tempo: 127,
     skey: 'A Minor',
     loudness: -4,
-    popularity: 0.92,
-    energy: 0.77,
-    speechiness: 0.04,
+    popularity: 92,
+    energy: 77,
+    speechiness: 4,
     instrumentalness: 0,
-    danceability: 0.77,
-    positiveness: 0.74,
-    liveness: 0.11
+    danceability: 77,
+    positiveness: 74,
+    liveness: 11
   },
 
   {
@@ -556,13 +556,13 @@ export default [
     tempo: 134,
     skey: 'F#Gb Minor',
     loudness: -6,
-    popularity: 0.89,
-    energy: 0.64,
-    speechiness: 0.1,
+    popularity: 89,
+    energy: 64,
+    speechiness: 10,
     instrumentalness: 0,
-    danceability: 0.81,
-    positiveness: 0.18,
-    liveness: 0.1
+    danceability: 81,
+    positiveness: 18,
+    liveness: 10
   },
 
   {
@@ -576,13 +576,13 @@ export default [
     tempo: 91,
     skey: 'D Major',
     loudness: -3,
-    popularity: 0.74,
-    energy: 0.93,
-    speechiness: 0.05,
-    instrumentalness: 0.14,
-    danceability: 0.44,
-    positiveness: 0.38,
-    liveness: 0.32
+    popularity: 74,
+    energy: 93,
+    speechiness: 5,
+    instrumentalness: 14,
+    danceability: 44,
+    positiveness: 38,
+    liveness: 32
   },
 
   {
@@ -596,13 +596,13 @@ export default [
     tempo: 152,
     skey: 'F#/Gb Minor',
     loudness: -3,
-    popularity: 0.71,
-    energy: 0.97,
-    speechiness: 0.06,
+    popularity: 71,
+    energy: 97,
+    speechiness: 6,
     instrumentalness: 0,
-    danceability: 0.54,
-    positiveness: 0.85,
-    liveness: 0.5
+    danceability: 54,
+    positiveness: 85,
+    liveness: 5
   },
 
   {
@@ -616,13 +616,13 @@ export default [
     tempo: 152,
     skey: 'F#/Gb Minor',
     loudness: -3,
-    popularity: 0.71,
-    energy: 0.97,
-    speechiness: 0.06,
+    popularity: 71,
+    energy: 97,
+    speechiness: 6,
     instrumentalness: 0,
-    danceability: 0.54,
-    positiveness: 0.71,
-    liveness: 0.05
+    danceability: 54,
+    positiveness: 71,
+    liveness: 5
   },
 
   {
@@ -636,13 +636,13 @@ export default [
     tempo: 100,
     skey: 'B Minor',
     loudness: -5,
-    popularity: 0.68,
-    energy: 0.89,
-    speechiness: 0.03,
+    popularity: 68,
+    energy: 89,
+    speechiness: 3,
     instrumentalness: 0,
-    danceability: 0.59,
-    positiveness: 0.67,
-    liveness: 0.16
+    danceability: 59,
+    positiveness: 67,
+    liveness: 16
   },
 
   {
@@ -656,13 +656,13 @@ export default [
     tempo: 102,
     skey: 'B Major',
     loudness: -5,
-    popularity: 0.67,
-    energy: 0.94,
-    speechiness: 0.04,
+    popularity: 67,
+    energy: 94,
+    speechiness: 4,
     instrumentalness: 0,
-    danceability: 0.59,
-    positiveness: 0.53,
-    liveness: 0.19
+    danceability: 59,
+    positiveness: 53,
+    liveness: 19
   },
 
   {
@@ -676,13 +676,13 @@ export default [
     tempo: 122,
     skey: 'D Major',
     loudness: -1,
-    popularity: 0.62,
-    energy: 0.98,
-    speechiness: 0.07,
+    popularity: 62,
+    energy: 98,
+    speechiness: 7,
     instrumentalness: 0,
-    danceability: 0.64,
-    positiveness: 0.85,
-    liveness: 0.33
+    danceability: 64,
+    positiveness: 85,
+    liveness: 33
   },
 
   {
@@ -696,13 +696,13 @@ export default [
     tempo: 106,
     skey: 'G Major',
     loudness: -4,
-    popularity: 0.59,
-    energy: 0.80,
-    speechiness: 0.03,
+    popularity: 59,
+    energy: 80,
+    speechiness: 3,
     instrumentalness: 0,
-    danceability: 0.57,
-    positiveness: 0.5,
-    liveness: 0.11
+    danceability: 57,
+    positiveness: 5,
+    liveness: 11
   },
 
   {
@@ -716,13 +716,13 @@ export default [
     tempo: 149,
     skey: 'B Minor',
     loudness: -2,
-    popularity: 0.54,
-    energy: 0.91,
-    speechiness: 0.08,
+    popularity: 54,
+    energy: 91,
+    speechiness: 8,
     instrumentalness:0,
-    danceability: 0.34,
-    positiveness: 0.46,
-    liveness: 0.05
+    danceability: 34,
+    positiveness: 46,
+    liveness: 5
   },
 
   {
@@ -736,13 +736,13 @@ export default [
     tempo: 178,
     skey: 'B Minor',
     loudness: -3,
-    popularity: 0.67,
-    energy: 0.91,
-    speechiness: 0.1,
+    popularity: 67,
+    energy: 91,
+    speechiness: 10,
     instrumentalness: 0,
-    danceability: 0.36,
-    positiveness: 0.68,
-    liveness: 0.34
+    danceability: 36,
+    positiveness: 68,
+    liveness: 34
   },
 
   {
@@ -756,13 +756,13 @@ export default [
     tempo: 140,
     skey: 'E Minor',
     loudness: -4,
-    popularity: 0.67,
-    energy: 0.83,
-    speechiness: 0.4,
+    popularity: 67,
+    energy: 83,
+    speechiness: 40,
     instrumentalness: 0,
-    danceability: 0.6,
-    positiveness: 0.49,
-    liveness: 0.36
+    danceability: 6,
+    positiveness: 49,
+    liveness: 36
   },
 
   {
@@ -776,13 +776,13 @@ export default [
     tempo: 120,
     skey: 'C#/Db Minor',
     loudness: -18,
-    popularity: 0.62,
-    energy: 0.47,
-    speechiness: 0.03,
-    instrumentalness: 0.34,
-    danceability: 0.60,
-    positiveness: 0.76,
-    liveness: 0.29
+    popularity: 62,
+    energy: 47,
+    speechiness: 3,
+    instrumentalness: 34,
+    danceability: 60,
+    positiveness: 76,
+    liveness: 29
   },
 
   {
@@ -796,13 +796,13 @@ export default [
     tempo: 124,
     skey: 'A Major',
     loudness: -8,
-    popularity: 0.47,
-    energy: 0.49,
-    speechiness: 0.05,
+    popularity: 47,
+    energy: 49,
+    speechiness: 5,
     instrumentalness: 0,
-    danceability: 0.81,
-    positiveness: 0.77,
-    liveness: 0.8
+    danceability: 81,
+    positiveness: 77,
+    liveness: 80
   },
 
   {
@@ -816,13 +816,13 @@ export default [
     tempo: 97,
     skey: 'F Minor',
     loudness: -6,
-    popularity: 0.58,
-    energy: 0.84,
-    speechiness: 0.02,
-    instrumentalness: 0.67,
-    danceability: 0.57,
-    positiveness: 0.64,
-    liveness: 0.51
+    popularity: 58,
+    energy: 84,
+    speechiness: 2,
+    instrumentalness: 67,
+    danceability: 57,
+    positiveness: 64,
+    liveness: 51
   },
 
   {
@@ -836,13 +836,13 @@ export default [
     tempo: 103,
     skey: 'C Major',
     loudness: -5,
-    popularity: 0.66,
-    energy: 0.77,
-    speechiness: 0.03,
+    popularity: 66,
+    energy: 77,
+    speechiness: 3,
     instrumentalness: 0,
-    danceability: 0.66,
-    positiveness: 0.68,
-    liveness: 0.13
+    danceability: 66,
+    positiveness: 68,
+    liveness: 13
   },
 
   {
@@ -856,13 +856,13 @@ export default [
     tempo: 204,
     skey: 'E Major',
     loudness: -8,
-    popularity: 0.60,
-    energy: 0.31,
-    speechiness: 0.04,
+    popularity: 60,
+    energy: 31,
+    speechiness: 4,
     instrumentalness: 0,
-    danceability: 0.50,
-    positiveness: 0.44,
-    liveness: 0.1
+    danceability: 50,
+    positiveness: 44,
+    liveness: 10
   },
 
   {
@@ -876,13 +876,13 @@ export default [
     tempo: 130,
     skey: 'C Major',
     loudness: -12,
-    popularity: 0.62,
-    energy: 0.25,
-    speechiness: 0.04,
+    popularity: 62,
+    energy: 25,
+    speechiness: 4,
     instrumentalness: 0,
-    danceability: 0.68,
-    positiveness: 0.43,
-    liveness: 0.01
+    danceability: 68,
+    positiveness: 43,
+    liveness: 1
   },
 
   {
@@ -896,13 +896,13 @@ export default [
     tempo: 160,
     skey: 'D#/Eb Minor',
     loudness: -5,
-    popularity: 0.5,
-    energy: 0.94,
-    speechiness: 0.02,
-    instrumentalness: 0.02,
-    danceability: 0.57,
-    positiveness: 0.92,
-    liveness: 0.07
+    popularity: 50,
+    energy: 94,
+    speechiness: 2,
+    instrumentalness: 2,
+    danceability: 57,
+    positiveness: 92,
+    liveness: 7
   },
 
   {
@@ -916,12 +916,135 @@ export default [
     tempo: 132,
     skey: 'A Major',
     loudness: -6,
-    popularity: 0.53,
-    energy: 0.87,
-    speechiness: 0.04,
-    instrumentalness: 0.03,
-    danceability: 0.75,
-    positiveness: 0.96,
-    liveness: 0.15
+    popularity: 53,
+    energy: 87,
+    speechiness: 4,
+    instrumentalness: 3,
+    danceability: 75,
+    positiveness: 96,
+    liveness: 15
   },
+
+  {
+    title: 'Kesempurnaan Cinta',
+    artist: 'Rizky Febian',
+    spotify_url: 'https://open.spotify.com/track/18tLvggTFEZuzLdcnuej2u',
+    image_url: 'https://i.scdn.co/image/ab67616d0000b273a6d1a344692ad32545afd9a5',
+    language: 'ID',
+    genre: ['pop', 'jazz'],
+    length: '3:36',
+    tempo: 144,
+    skey: 'G Major',
+    loudness: -6,
+    popularity: 61,
+    energy: 60,
+    speechiness: 3,
+    instrumentalness: 0,
+    danceability: 49,
+    positiveness: 51,
+    liveness: 14
+  },
+
+  {
+    title: 'Kisah Sempurna',
+    artist: 'Mahalini',
+    spotify_url: 'https://open.spotify.com/track/6fX8WwxAQ6rCPIC7lMgztu',
+    image_url: 'https://i.scdn.co/image/ab67616d0000b2732f7bb02cb4b74bd7c2406428',
+    language: 'ID',
+    genre: ['pop', 'indonesian pop'],
+    length: '4:36',
+    tempo: 122,
+    skey: 'B Major',
+    loudness: -9,
+    popularity: 75,
+    energy: 49,
+    speechiness: 3,
+    instrumentalness: 0,
+    danceability: 54,
+    positiveness: 9,
+    liveness: 8
+  },
+
+  {
+    title: 'Terlukis Indah',
+    artist: 'Rizky Febian, Ziva Magnolya',
+    spotify_url: 'https://open.spotify.com/track/5S8TtEVuFPY9XEjg2hNWHa',
+    image_url: 'https://i.scdn.co/image/ab67616d0000b273bec326fb456741e71bfdb979',
+    language: 'ID',
+    genre: ['pop', 'jazz', 'r&b'],
+    length: '3:47',
+    tempo: 93,
+    skey: 'F#/Gb minor',
+    loudness: -6,
+    popularity: 69,
+    energy: 71,
+    speechiness: 4,
+    instrumentalness: 0,
+    danceability: 51,
+    positiveness: 52,
+    liveness: 17
+  },
+
+  {
+    title: 'Runaway Baby',
+    artist: 'Bruno Mars',
+    spotify_url: 'https://open.spotify.com/track/5MMLS3xm12D7N26xlfFApr',
+    image_url: 'https://i.scdn.co/image/ab67616d0000b273f6b55ca93bd33211227b502b',
+    language: 'EN',
+    genre: ['pop', 'funk', 'soul'],
+    length: '2:28',
+    tempo: 164,
+    skey: 'A#/Bb minor',
+    loudness: -3,
+    popularity: 73,
+    energy: 76,
+    speechiness: 4,
+    instrumentalness: 0,
+    danceability: 66,
+    positiveness: 82,
+    liveness: 13
+  },
+
+  {
+    title: 'Until I Found You',
+    artist: 'Stephen Sanchez',
+    spotify_url: 'https://open.spotify.com/track/0T5iIrXA4p5GsubkhuBIKV',
+    image_url: 'https://i.scdn.co/image/ab67616d0000b2738792c3e96f8ab97a767c5d0c',
+    language: 'EN',
+    genre: ['poprock', 'folkpop'],
+    length: '2:57',
+    tempo: 101,
+    skey: 'A#/Bb Major',
+    loudness: -6,
+    popularity: 86,
+    energy: 51,
+    speechiness: 3,
+    instrumentalness: 0,
+    danceability: 54,
+    positiveness: 23,
+    liveness: 17
+  },
+
+  {
+    title: 'Dia Milikku',
+    artist: 'Yovie & Nuno',
+    spotify_url: 'https://open.spotify.com/track/1OQyfW04HtxbKJykjlG3wD',
+    image_url: 'https://i.scdn.co/image/ab67616d0000b2736a37fc6f96faf4206f4845e7',
+    language: 'ID',
+    genre: ['pop', 'indonesian pop'],
+    length: '3:31',
+    tempo: 80,
+    skey: 'D Major',
+    loudness: -4,
+    popularity: 65,
+    energy: 88,
+    speechiness: 5,
+    instrumentalness: 0,
+    danceability: 52,
+    positiveness: 47,
+    liveness: 36
+  },
+
+
 ];
+

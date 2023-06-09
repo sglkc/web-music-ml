@@ -3,20 +3,43 @@ import Plot from 'react-plotly.js'
 import { Context } from '../func/Reducer'
 import clusterize from '../lib/node-kmeans'
 
-const quadraticDropOff = (e1, e2) => (1 / Math.pow(e1 - e1, 2))
+const infos = [
+  'Popularity', 'Energy', 'Speechiness', 'Instrumentalness', 'Danceability',
+  'Positiveness', 'Liveness'
+]
 
 export default function Clustering() {
   const [data, setData] = useState(false)
+  const [options, setOptions] = useState({
+    k: 4,
+    popularity: true,
+    energy: true,
+    speechiness: false,
+    instrumentalness: false,
+    danceability: false,
+    positiveness: false,
+    liveness: false
+  })
+
   const { reducer } = useContext(Context)
   const { songs } = reducer;
 
-  const vectors = new Array()
-  for (let i = 0; i < songs.length; i++) {
-    vectors[i] = [ songs[i]['popularity'], songs[i]['energy'] ]
-  }
-
   useEffect(() => {
-    clusterize(vectors, { k: 4 }, (_, res) => {
+    const vectors = []
+
+    songs.forEach((song) => {
+      const vector = []
+
+      for (const meta in options) {
+        if (options[meta] && meta !== 'k') {
+          vector.push(song[meta])
+        }
+      }
+
+      vectors.push(vector)
+    })
+
+    clusterize(vectors, { k: options.k }, (_, res) => {
       const series = []
 
       res.forEach(({ cluster }, i) => {
@@ -32,33 +55,61 @@ export default function Clustering() {
         })
       })
 
-      console.log(res)
-      console.log(series)
-
       setData(series)
     })
-  }, [])
+  }, [options])
 
   return (
     <>
       <h1 className="font-bold text-xl">K-Means Clustering</h1>
-      { data &&
-      <Plot
-        data={data}
-        layout={{
-          margin: {
-            b: 0,
-            t: 0
-          },
-          modebar: {
-            remove: [
-              'autoscale', 'lasso', 'zoom', 'zoomin', 'zoomout', 'reset', 'pan',
-              'select'
-            ]
-          }
-        }}
-      />
-      }
+      <div className="flex">
+        { data &&
+        <Plot
+          data={data}
+          layout={{
+            legend: { y: 0 },
+            margin: { b: 32, t: 32 },
+            modebar: {
+              remove: [
+                'lasso', 'zoom', 'zoomin', 'zoomout', 'pan', 'select'
+              ]
+            },
+            xaxis: { range: [0, 100] },
+            yaxis: { range: [0, 100] },
+            height: 450
+          }}
+        />
+        }
+        <div className="flex flex-col justify-center gap-2">
+          <label className="relative flex items-center gap-2">
+            <span className="mx-2">Clusters</span>
+            <input
+              type="range"
+              min="2"
+              max="10"
+              step="1"
+              defaultValue={options.k}
+              onMouseUp={(e) => setOptions({ ...options, k: e.target.value })}
+            />
+            <span className="absolute -right-6">
+              { options.k }
+            </span>
+          </label>
+          { infos.map((info, i) => (
+            <label className="relative ml-2 flex items-center gap-2" key={i}>
+              <input
+                type="checkbox"
+                defaultChecked={options[info.toLowerCase()]}
+                onChange={({ target }) => setOptions({
+                  ...options,
+                  [info.toLowerCase()]: target.checked
+                })}
+              />
+              <span>{ info }</span>
+            </label>
+          ))}
+        </div>
+      </div>
     </>
   )
 }

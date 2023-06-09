@@ -19,11 +19,11 @@ export default function Metadata(props) {
               <meter
                 className="mr-[5ch]"
                 min="0"
-                max="1"
+                max="100"
                 value={props[info.toLowerCase()]}
               />
               <span className="absolute right-0">
-                { (props[info.toLowerCase()] * 100).toPrecision(2) }%
+                { props[info.toLowerCase()] }
               </span>
             </label>
           ))}

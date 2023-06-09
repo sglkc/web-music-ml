@@ -14,13 +14,13 @@ export default function App() {
     metadata: false,
     songs: dataset,
     info: {
-      popularity: 0.67,
-      energy: 0.75,
-      speechiness: 0.03,
+      popularity: 67,
+      energy: 75,
+      speechiness: 3,
       instrumentalness: 0,
-      danceability: 0.42,
-      positiveness: 0.44,
-      liveness: 0.16
+      danceability: 42,
+      positiveness: 44,
+      liveness: 16
     }
   }
 

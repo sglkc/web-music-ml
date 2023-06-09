@@ -13,12 +13,14 @@ export default function RecommendOptions() {
       <h2 className="text-xl font-semibold text-center">My Taste</h2>
       <p className="text-center">Silahkan ubah slider sesuai dengan kesukaan</p>
       { infos.map((info, i) => (
-        <label className="ms-4" key={i}>
+        <label className="relative mx-4 flex justify-between" key={i}>
+          <span>{ info }</span>
           <input
+            className="mr-8"
             type="range"
             min="0"
-            max="1"
-            step="0.01"
+            max="100"
+            step="10"
             defaultValue={reducer.info[info.toLowerCase()]}
             onChange={({ target }) => dispatch({
               ...reducer,
@@ -28,9 +30,8 @@ export default function RecommendOptions() {
               }
             })}
           />
-          <span className="mx-2">{ info }</span>
-          <span className="absolute">
-            { (reducer.info[info.toLowerCase()] * 100).toPrecision(3) }%
+          <span className="absolute right-0">
+            { reducer.info[info.toLowerCase()] }
           </span>
         </label>
       ))}
