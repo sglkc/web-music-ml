@@ -31,7 +31,7 @@ export default function Song(props) {
 
   return (
     <>
-      <tr className={!metadata && 'b-b-1'}>
+      <tr className={!metadata ? 'b-b-1' : 'bg-gray-50'}>
         <Td>{ props.no }</Td>
         <Td>{ props.title }</Td>
         <Td>{ props.artist }</Td>
