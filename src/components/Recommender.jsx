@@ -6,7 +6,13 @@ export default function Recommender() {
   const { reducer, dispatch } = useContext(Context)
 
   const recommend = () => {
-    const recommended = knn(reducer.info, reducer.songs)
+    const { info } = reducer
+
+    Object.keys(info).forEach((key) => {
+      if (!info[key]) delete info[key]
+    })
+
+    const recommended = knn(info, reducer.songs)
     dispatch({ ...reducer, songs: recommended })
   }
 

@@ -11,7 +11,7 @@ export default function Metadata(props) {
   return (
     <tr className="b-b-1">
       <td></td>
-      <td className="pb-4" colSpan={reducer.image ? 10 : 9}>
+      <td className="pt-2 pb-4" colSpan={reducer.image ? 10 : 9}>
         <div className="mx-auto max-w-160 grid grid-cols-2 gap-x-8 gap-y-2">
           { infos.map((info, i) => (
             <label className="relative flex items-center" key={i}>
