@@ -9,7 +9,12 @@ export default function Song(props) {
   const { reducer, dispatch } = useContext(Context)
 
   const similar = () => {
-    window.scrollTo(0, 0)
+    document.getElementById('recommender').scrollIntoView({
+      behavior: 'smooth',
+      block: 'center',
+      inline: 'center'
+    })
+
     dispatch({
       ...reducer,
       info: {

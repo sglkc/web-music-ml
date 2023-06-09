@@ -7,8 +7,8 @@ export default function SongList() {
   const { songs } = reducer;
 
   return (
-    <>
-      <h1 className="text-xl font-bold">Song List</h1>
+    <div>
+      <h1 className="mb-4 text-center text-xl font-bold">Table</h1>
       <div className="max-h-1/3 max-w-[92ch] overflow-y-auto">
         <table>
           <thead>
@@ -33,6 +33,6 @@ export default function SongList() {
           </tbody>
         </table>
       </div>
-    </>
+    </div>
 )
 }

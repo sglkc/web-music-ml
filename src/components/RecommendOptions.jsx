@@ -9,8 +9,8 @@ export default function RecommendOptions() {
   ]
 
   return (
-    <div className="flex flex-col gap-1">
-      <h2 className="text-lg font-semibold text-center">My Taste</h2>
+    <div id="recommender" className="flex flex-col gap-1">
+      <h2 className="text-xl font-semibold text-center">My Taste</h2>
       <p className="text-center">Silahkan ubah slider sesuai dengan kesukaan</p>
       { infos.map((info, i) => (
         <label className="ms-4" key={i}>

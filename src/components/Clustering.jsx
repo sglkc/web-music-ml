@@ -1,37 +1,64 @@
-import { useContext } from 'react'
+import { useContext, useEffect, useState } from 'react'
+import Plot from 'react-plotly.js'
 import { Context } from '../func/Reducer'
-import cluster from 'set-clustering'
+import clusterize from '../lib/node-kmeans'
 
 const quadraticDropOff = (e1, e2) => (1 / Math.pow(e1 - e1, 2))
 
 export default function Clustering() {
+  const [data, setData] = useState(false)
   const { reducer } = useContext(Context)
   const { songs } = reducer;
-  const c = cluster(songs, (x, y) => {
-    let score = 0
 
-    x.genre.forEach((tx) => {
-      y.genre.forEach((ty) => {
-        if (tx == ty) score += 1
+  const vectors = new Array()
+  for (let i = 0; i < songs.length; i++) {
+    vectors[i] = [ songs[i]['popularity'], songs[i]['energy'] ]
+  }
+
+  useEffect(() => {
+    clusterize(vectors, { k: 4 }, (_, res) => {
+      const series = []
+
+      res.forEach(({ cluster }, i) => {
+        const x = cluster.map((val) => val[0])
+        const y = cluster.map((val) => val[1])
+
+        series.push({
+          x,
+          y,
+          mode: 'markers',
+          name: 'cluster ' + (i) ,
+          legendgroup: 'cluster '+ (i)
+        })
       })
+
+      console.log(res)
+      console.log(series)
+
+      setData(series)
     })
-
-    if (
-      x.artist === y.artist ||
-      x.language === y.language
-    ) score += 1
-
-    return score
-  })
-
-  const clusterSong = () => console.log(c)
+  }, [])
 
   return (
-    <button
-      className="px-4 py-2 bg-green-400 rounded-2"
-      onClick={clusterSong}
-    >
-      Cluster songs
-    </button>
+    <>
+      <h1 className="font-bold text-xl">K-Means Clustering</h1>
+      { data &&
+      <Plot
+        data={data}
+        layout={{
+          margin: {
+            b: 0,
+            t: 0
+          },
+          modebar: {
+            remove: [
+              'autoscale', 'lasso', 'zoom', 'zoomin', 'zoomout', 'reset', 'pan',
+              'select'
+            ]
+          }
+        }}
+      />
+      }
+    </>
   )
 }

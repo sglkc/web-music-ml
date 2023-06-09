@@ -28,10 +28,10 @@ export default function App() {
 
   return (
     <Context.Provider value={{ reducer, dispatch }}>
-      <div className="pt-4 pb-16 font-sans flex flex-col justify-center items-center gap-4">
+      <div className="pt-4 pb-16 font-sans flex flex-col justify-center items-center gap-8">
+        <Clustering />
         <RecommendOptions />
         <Recommender />
-        <Clustering />
         <TableOptions />
         <SongList />
       </div>

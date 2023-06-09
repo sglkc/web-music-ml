@@ -6,7 +6,7 @@ export default function TableOptions() {
 
   return (
     <div className="flex flex-col gap-1">
-      <h2 className="text-lg font-semibold text-center">Table Options</h2>
+      <h2 className="text-xl font-semibold text-center">Table Options</h2>
       <label>
         <input
           type="checkbox"
