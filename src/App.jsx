@@ -30,9 +30,13 @@ export default function App() {
     <Context.Provider value={{ reducer, dispatch }}>
       <div className="pt-4 pb-16 font-sans flex flex-col justify-center items-center gap-8">
         <Clustering />
-        <RecommendOptions />
-        <Recommender />
-        <TableOptions />
+        <div className="flex gap-16">
+          <RecommendOptions />
+          <div className="flex flex-col gap-4">
+            <TableOptions />
+            <Recommender />
+          </div>
+        </div>
         <SongList />
       </div>
     </Context.Provider>

@@ -60,7 +60,7 @@ export default function Clustering() {
   }, [options])
 
   return (
-    <>
+    <div>
       <h1 className="font-bold text-xl">K-Means Clustering</h1>
       <div className="flex">
         { data &&
@@ -110,6 +110,6 @@ export default function Clustering() {
           ))}
         </div>
       </div>
-    </>
+    </div>
   )
 }
