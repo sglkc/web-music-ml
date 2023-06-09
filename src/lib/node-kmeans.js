@@ -18,7 +18,7 @@ The kmeans will return an error if:
   - The number of different input vectors is smaller than k
 */
 
-import _ from 'underscore';
+import { pick, isArray, isEqual } from 'underscore';
 
 
 /**
@@ -64,7 +64,7 @@ class Group {
       this.centroidIndex = self.indexes[i];
       self.indexes.splice(i, 1);
       this.centroid = [];
-      if (!_.isArray(self.v[this.centroidIndex])) { // only one dimension
+      if (!isArray(self.v[this.centroidIndex])) { // only one dimension
         this.centroid[0] = self.v[this.centroidIndex];
       } else {
         for (let j = 0, max = self.v[this.centroidIndex].length; j < max; ++j) {
@@ -73,7 +73,7 @@ class Group {
       }
     }
     // Centroid has moved if old value != new value
-    this.centroidMoved = !_.isEqual(this.centroid, this.centroidOld);
+    this.centroidMoved = !isEqual(this.centroid, this.centroidOld);
     return this;
   }
 
@@ -119,7 +119,7 @@ class Clusterize {
        && (typeof options.distance !== 'function' || options.distance.length !== 2)) {
       return callback(new Error('options.distance must be a function with two arguments'));
     }
-    if (!_.isArray(vector)) {
+    if (!isArray(vector)) {
       return callback(new Error('Provide an array of data'));
     }
 
@@ -161,11 +161,11 @@ class Clusterize {
 
   checkV(v) {
     let dim = 1;
-    if (_.isArray(v[0])) {
+    if (isArray(v[0])) {
       dim = v[0].length;
     }
     for (let i = 0, max = v.length; i < max; ++i) {
-      if (!_.isArray(v[i])) {
+      if (!isArray(v[i])) {
         if (dim !== 1) {
           throw new Error('All the elements must have the same dimension');
         }
@@ -222,7 +222,7 @@ class Clusterize {
   output() {
     const out = [];
     for (let j = 0, max = this.groups.length; j < max; ++j) {
-      out[j] = _.pick(this.groups[j], 'centroid', 'cluster', 'clusterInd');
+      out[j] = pick(this.groups[j], 'centroid', 'cluster', 'clusterInd');
     }
     return out;
   }
