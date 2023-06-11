@@ -1,4 +1,4 @@
-const { Sequelize, DataTypes } = require('sequelize');
+import { Sequelize, DataTypes } from 'sequelize';
 
 const sequelize = new Sequelize({
   database: process.env.DB_NAME || 'projekbasdat',
@@ -6,7 +6,7 @@ const sequelize = new Sequelize({
   password: process.env.DB_PASS || '',
   dialect: 'mysql',
   host: process.env.DB_HOST || 'localhost',
-  port: 3306,
+  port: process.env.DB_PORT || 3306,
   logging: process.env.NODE_ENV === 'development' && console.log
 });
 
@@ -36,6 +36,9 @@ const Artist = sequelize.define('artists', {
     allowNull: false,
   },
 }, {
+  createdAt: 'created_at',
+  updatedAt: 'updated_at',
+  underscored: true,
   tableName: 'artists',
 });
 
@@ -80,10 +83,58 @@ const Metadata = sequelize.define('metadata', {
   timestamps: false
 });
 
+const Genre = sequelize.define('genres', {
+  genre_id: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+    primaryKey: true
+  },
+  subgenre_id: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+    references: {
+      model: Genre,
+      key: 'genre_id',
+    }
+  },
+  name: {
+    type: DataTypes.STRING(32),
+    allowNull: false
+  }
+}, {
+  tableName: 'genres',
+  timestamps: false
+});
+
+const SongGenres = sequelize.define('songgenres', {
+  song_id: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+    primaryKey: true,
+    references: {
+      model: Song,
+      key: 'song_id',
+    }
+  },
+  genre_id: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+    primaryKey: true,
+    references: {
+      model: Genre,
+      key: 'genre_id',
+    }
+  },
+}, {
+  tableName: 'songgenres',
+  timestamps: false
+});
+
 const Song = sequelize.define('songs', {
   song_id: {
     type: DataTypes.INTEGER,
     allowNull: false,
+    primaryKey: true
   },
   artist_id: {
     type: DataTypes.INTEGER,
@@ -124,61 +175,38 @@ const Song = sequelize.define('songs', {
   },
 }, {
   defaultScope: {
-    include: [{ all: true }]
+    include: [
+      {
+        model: Artist,
+        as: 'artist',
+        attributes: ['name']
+      },
+      {
+        model: Genre,
+        as: 'genre',
+        attributes: ['name']
+      },
+      {
+        model: Metadata,
+        as: 'metadata',
+        attributes: {
+          exclude: 'metadata_id'
+        }
+      }
+    ]
   },
+  createdAt: 'created_at',
+  updatedAt: 'updated_at',
+  underscored: true,
   tableName: 'songs'
 });
 
-const Genre = sequelize.define('genres', {
-  genre_id: {
-    type: DataTypes.INTEGER,
-    allowNull: false,
-  },
-  subgenre_id: {
-    type: DataTypes.INTEGER,
-    allowNull: false,
-    references: {
-      model: Genre,
-      key: 'genre_id',
-    }
-  },
-  name: {
-    type: DataTypes.STRING(32),
-    allowNull: false
-  }
-}, {
-  tableName: 'genres',
-  timestamps: false
-});
-
-const SongGenres = sequelize.define('songgenres', {
-  song_id: {
-    type: DataTypes.INTEGER,
-    allowNull: false,
-    references: {
-      model: Song,
-      key: 'song_id',
-    }
-  },
-  genre_id: {
-    type: DataTypes.INTEGER,
-    allowNull: false,
-    references: {
-      model: Genre,
-      key: 'genre_id',
-    }
-  },
-}, {
-  tableName: 'songgenres',
-  timestamps: false
-});
-
-Song.hasOne(Artist, { foreignKey: 'artist_id' });
-Song.hasMany(Genre, { foreignKey: 'genre_id' });
+Song.hasOne(Artist, { as: 'artist', foreignKey: 'artist_id' });
+Song.hasMany(Genre, { as: 'genre', foreignKey: 'genre_id' });
 Song.hasOne(Language, { foreignKey: 'language_code' });
-Song.hasOne(Metadata, { foreignKey: 'artist_id' });
+Song.hasOne(Metadata, { as: 'metadata', foreignKey: 'metadata_id' });
 
-module.exports = {
+export {
   Artist,
   Language,
   Metadata,
