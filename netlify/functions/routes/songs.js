@@ -31,6 +31,32 @@ router.get('/', async (_, res) => {
   }
 });
 
+router.get('/:song_id', async (req, res) => {
+  const { song_id } = req.params;
+
+  if (!song_id) return res.status(500).send({ error: 'song_id is required' });
+
+  try {
+    const s = await Song.findByPk(song_id);
+    const song = s.toJSON();
+
+    Object.keys(song.metadata).forEach((key) => {
+      song[key] = song.metadata[key];
+    });
+
+    delete song.metadata;
+
+    song.language = song.language_code;
+    song.artist = song.artist.name;
+    song.genre = song.genre.map((genre) => genre.name);
+    song.length = song.length.slice(3);
+
+    return res.status(200).send(song);
+  } catch (error) {
+    return res.status(500).send({ error });
+  }
+});
+
 router.patch('/:song_id', async (req, res) => {
   const { song_id } = req.params;
 

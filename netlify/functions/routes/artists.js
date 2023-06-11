@@ -18,8 +18,8 @@ router.get('/:artist_id', async (req, res) => {
   if (!artist_id) return res.status(500).send({ error: 'artist_id is required' });
 
   try {
-    const artists = await Artist.findByPk(artist_id);
-    return res.status(200).send([ ...artists ]);
+    const artist = await Artist.findByPk(artist_id);
+    return res.status(200).send([ ...artist ]);
   } catch (error) {
     return res.status(500).send({ error });
   }

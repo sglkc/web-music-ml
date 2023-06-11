@@ -12,7 +12,6 @@ const Td = (props) => (<td className="p-2" {...props} />)
 
 export default function ArtistsPage() {
   const [artists, setArtists] = useState([])
-  const [artist, setArtist] = useState(null)
   const [update, setUpdate] = useState(true)
   const [params, setParams] = useSearchParams()
 
@@ -23,34 +22,37 @@ export default function ArtistsPage() {
       .catch(alert)
       .finally(() => setUpdate(false))
   }, [update])
-/*
-  useEffect(() => {
+
+  const submit = async (e) => {
+    e.preventDefault()
+
     const id = params.get('id')
 
-    if (!id) return
+    if (id) {
+      await axios.patch('/api/artists/' +  id, e.target, {
+        headers: { 'Content-Type': 'application/json' }
+      })
+    } else {
+      await axios.post('/api/artists', e.target, {
+        headers: { 'Content-Type': 'application/json' }
+      })
+    }
 
-    setArtist()
-
-  }, [params])*/
-
-  const submit = (e) => setTimeout(() => {
     setUpdate(true)
     e.target.reset()
-  }, 100)
+  }
 
   return (
     <>
       <Navbar />
       <h1 className="font-bold text-lg text-center">Artists CRUD</h1>
       <div className="mt-4 mb-16 flex flex-col justify-center gap-8">
-        <iframe className="hidden" id="noredir" name="noredir" />
-        <form
-          className="mx-auto flex flex-col gap-2"
-          action="/api/artists"
-          method="post"
-          target="noredir"
-          onSubmit={submit}
-        >
+        <form className="mx-auto flex flex-col gap-2" onSubmit={submit}>
+          <input
+            className="hidden"
+            name="artist_id"
+            value={params.get('id')}
+          />
           <input
             className="p-2 b-2 rounded-2"
             name="name"
@@ -70,7 +72,7 @@ export default function ArtistsPage() {
               className="w-full px-4 py-2 rounded-2 bg-green-400"
               type="submit"
             >
-              Submit
+              { params.get('id') ? 'Update' : 'Submit' }
             </button>
             <button
               className="px-4 py-2 rounded-2 bg-gray-300"

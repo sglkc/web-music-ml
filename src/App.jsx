@@ -2,12 +2,17 @@ import { useReducer } from 'react'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import { Context, Reducer } from './func/Reducer'
 import ArtistsPage from './pages/Artists'
+import SongsPage from './pages/Songs'
 import IndexPage from './pages/Index'
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <IndexPage />
+  },
+  {
+    path: '/songs',
+    element: <SongsPage />
   },
   {
     path: '/artists',

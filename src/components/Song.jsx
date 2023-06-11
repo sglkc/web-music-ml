@@ -1,4 +1,5 @@
 import { useContext, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import { Context } from '../func/Reducer'
 import Metadata from './Metadata'
@@ -6,6 +7,7 @@ import Metadata from './Metadata'
 const Td = (props) => (<td className="p-2" {...props} />)
 
 export default function Song(props) {
+  const navigate = useNavigate();
   const [metadata, setMetadata] = useState(false)
   const { reducer, dispatch } = useContext(Context)
 
@@ -30,7 +32,7 @@ export default function Song(props) {
     })
   }
 
-  const edit = () => {}
+  const edit = () => (navigate('/songs?id=' + props.song_id))
 
   const remove = () => {
     if (!confirm(`Hapus lagu ${props.title}?`)) return;

@@ -2,6 +2,7 @@ import { NavLink } from 'react-router-dom'
 
 const pages = [
   { to: '/', text: 'Main Page' },
+  { to: '/songs', text: 'Songs' },
   { to: '/artists', text: 'Artists' },
 ]
 

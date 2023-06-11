@@ -1,10 +1,12 @@
 import { Sequelize, DataTypes } from 'sequelize';
+import mysql2 from 'mysql2';
 
 const sequelize = new Sequelize({
   database: process.env.DB_NAME || 'projekbasdat',
   username: process.env.DB_USER || 'root',
   password: process.env.DB_PASS || '',
   dialect: 'mysql',
+  dialectModule: mysql2,
   host: process.env.DB_HOST || 'localhost',
   port: process.env.DB_PORT || 3306,
   logging: process.env.NODE_ENV === 'development' && console.log
