@@ -6,7 +6,20 @@ const router = Router();
 router.get('/', async (_, res) => {
   try {
     const artists = await Artist.findAll();
-    return res.status(200).send(artists.toJSON());
+    return res.status(200).send([ ...artists ]);
+  } catch (error) {
+    return res.status(500).send({ error });
+  }
+});
+
+router.get('/:artist_id', async (req, res) => {
+  const { artist_id } = req.params;
+
+  if (!artist_id) return res.status(500).send({ error: 'artist_id is required' });
+
+  try {
+    const artists = await Artist.findByPk(artist_id);
+    return res.status(200).send([ ...artists ]);
   } catch (error) {
     return res.status(500).send({ error });
   }

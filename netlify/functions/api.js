@@ -12,6 +12,7 @@ router.use('/songs', songs);
 
 api.use(bodyParser.json());
 api.use(bodyParser.urlencoded({ extended: true }));
+api.use(express.json());
 api.use(express.urlencoded({ extended: true }));
 api.use('/api', router);
 api.use((_, res) => res.sendStatus(404));

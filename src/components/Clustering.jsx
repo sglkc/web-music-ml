@@ -82,8 +82,8 @@ export default function Clustering() {
           }}
         />
         }
-        <div className="lg:px-0 px-16 flex flex-row lg:flex-col lg:flex-wrap-0 flex-wrap justify-center gap-2">
-          <label className="lg:pr-0 pr-4 relative flex items-center gap-2">
+        <div className="lg:px-0 px-32 flex flex-row lg:flex-col lg:flex-wrap-0 flex-wrap justify-center gap-2">
+          <label className="w-full mx-auto lg:pr-0 pr-4 flex justify-center items-center gap-2">
             <span className="mx-2">Clusters</span>
             <input
               type="range"
@@ -93,7 +93,7 @@ export default function Clustering() {
               defaultValue={options.k}
               onMouseUp={(e) => setOptions({ ...options, k: e.target.value })}
             />
-            <span className="absolute lg:-right-6 right-0">
+            <span className="lg:-right-6 right-0">
               { options.k }
             </span>
           </label>

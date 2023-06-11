@@ -37,7 +37,8 @@ export default function Song(props) {
 
     axios.delete('/api/songs/' + props.song_id)
       .then(() => {
-        dispatch({ ...reducer, songs: reducer.songs.splice(props.no, 1) })
+        reducer.songs.splice(props.key, 1)
+        dispatch({ ...reducer, songs: [ ...reducer.songs ] })
         alert(`Lagu ${props.title} sukses telah dihapus`)
       })
       .catch(alert)
