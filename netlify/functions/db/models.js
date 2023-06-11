@@ -211,5 +211,6 @@ export {
   Language,
   Metadata,
   Song,
+  SongGenres,
   Genre
 };

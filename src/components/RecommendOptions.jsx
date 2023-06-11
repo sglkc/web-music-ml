@@ -21,7 +21,7 @@ export default function RecommendOptions() {
             min="0"
             max="100"
             step="10"
-            defaultValue={reducer.info[info.toLowerCase()]}
+            value={reducer.info[info.toLowerCase()]}
             onChange={({ target }) => dispatch({
               ...reducer,
               info: {

@@ -1,11 +1,14 @@
-import { useEffect, useReducer } from 'react'
+import { useReducer } from 'react'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import { Context, Reducer } from './func/Reducer'
-import Clustering from './components/Clustering'
-import Recommender from './components/Recommender'
-import SongList from './components/SongList'
-import TableOptions from './components/TableOptions'
-import RecommendOptions from './components/RecommendOptions'
-import axios from 'axios'
+import Index from './pages/Index'
+
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <Index />
+  }
+]);
 
 export default function App() {
   const defaults = {
@@ -26,25 +29,9 @@ export default function App() {
 
   const [reducer, dispatch] = useReducer(Reducer, defaults)
 
-  useEffect(() => {
-    axios.get('/api')
-      .then(({ data }) => dispatch({ ...reducer, songs: data }))
-      .catch(alert)
-  }, [])
-
   return (
     <Context.Provider value={{ reducer, dispatch }}>
-      <div className="pt-4 pb-16 font-sans flex flex-col justify-center items-center gap-8">
-        <Clustering />
-        <div className="flex md:flex-row flex-col md:gap-16 gap-8">
-          <RecommendOptions />
-          <div className="flex flex-col gap-4">
-            <TableOptions />
-            <Recommender />
-          </div>
-        </div>
-        <SongList />
-      </div>
+      <RouterProvider router={router} />
     </Context.Provider>
   )
 }

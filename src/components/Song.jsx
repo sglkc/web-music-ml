@@ -1,4 +1,5 @@
 import { useContext, useState } from 'react'
+import axios from 'axios'
 import { Context } from '../func/Reducer'
 import Metadata from './Metadata'
 
@@ -27,6 +28,19 @@ export default function Song(props) {
         liveness: props.liveness
       }
     })
+  }
+
+  const edit = () => {}
+
+  const remove = () => {
+    if (!confirm(`Hapus lagu ${props.title}?`)) return;
+
+    axios.delete('/api/songs/' + props.song_id)
+      .then(() => {
+        dispatch({ ...reducer, songs: reducer.songs.splice(props.no, 1) })
+        alert(`Lagu ${props.title} sukses telah dihapus`)
+      })
+      .catch(alert)
   }
 
   return (
@@ -72,12 +86,12 @@ export default function Song(props) {
         <Td>
           <div className="flex gap-2 underline underline-from-font">
             <button
-              className="text-gray-600"
+              className="i-im:file-audio text-gray-600"
               onClick={() => setMetadata(!metadata)}
-            >
-              Metadata
-            </button>
-            <button className="text-green-800" onClick={similar}>Similar</button>
+            />
+            <button className="i-im:search text-blue-600" onClick={similar} />
+            <button className="i-im:edit text-green-600" onClick={edit} />
+            <button className="i-im:trash text-red-600" onClick={remove} />
           </div>
         </Td>
       </tr>

@@ -25,7 +25,7 @@ export default function Clustering() {
   const { songs } = reducer;
 
   useEffect(() => {
-    if (!songs.length) return
+    if (songs.length < options.k) return
 
     const vectors = []
 
