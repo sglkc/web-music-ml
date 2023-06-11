@@ -1,18 +1,18 @@
-import { useReducer } from 'react'
+import { useEffect, useReducer } from 'react'
 import { Context, Reducer } from './func/Reducer'
 import Clustering from './components/Clustering'
 import Recommender from './components/Recommender'
 import SongList from './components/SongList'
 import TableOptions from './components/TableOptions'
 import RecommendOptions from './components/RecommendOptions'
-import dataset from './dataset'
+import axios from 'axios'
 
 export default function App() {
   const defaults = {
     embed: false,
     image: false,
     metadata: false,
-    songs: dataset,
+    songs: [],
     info: {
       popularity: 100,
       energy: 0,
@@ -25,6 +25,12 @@ export default function App() {
   }
 
   const [reducer, dispatch] = useReducer(Reducer, defaults)
+
+  useEffect(() => {
+    axios.get('/api')
+      .then(({ data }) => dispatch({ ...reducer, songs: data }))
+      .catch(alert)
+  }, [])
 
   return (
     <Context.Provider value={{ reducer, dispatch }}>

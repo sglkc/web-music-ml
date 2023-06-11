@@ -11,7 +11,7 @@ const infos = [
 export default function Clustering() {
   const [data, setData] = useState(false)
   const [options, setOptions] = useState({
-    k: 4,
+    k: 2,
     popularity: true,
     energy: true,
     speechiness: false,
@@ -25,6 +25,8 @@ export default function Clustering() {
   const { songs } = reducer;
 
   useEffect(() => {
+    if (!songs.length) return
+
     const vectors = []
 
     songs.forEach((song) => {
@@ -41,7 +43,6 @@ export default function Clustering() {
 
     clusterize(vectors, { k: options.k }, (_, res) => {
       const series = []
-
       res.forEach(({ cluster }, i) => {
         const x = cluster.map((val) => val[0])
         const y = cluster.map((val) => val[1])
@@ -57,7 +58,7 @@ export default function Clustering() {
 
       setData(series)
     })
-  }, [options])
+  }, [songs, options])
 
   return (
     <div>
