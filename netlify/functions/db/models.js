@@ -89,11 +89,11 @@ const Genre = sequelize.define('genres', {
   genre_id: {
     type: DataTypes.INTEGER,
     allowNull: false,
-    primaryKey: true
+    primaryKey: true,
+    autoIncrement: true,
   },
   subgenre_id: {
     type: DataTypes.INTEGER,
-    allowNull: false,
     references: {
       model: Genre,
       key: 'genre_id',
@@ -136,7 +136,8 @@ const Song = sequelize.define('songs', {
   song_id: {
     type: DataTypes.INTEGER,
     allowNull: false,
-    primaryKey: true
+    primaryKey: true,
+    autoIncrement: true,
   },
   artist_id: {
     type: DataTypes.INTEGER,
@@ -177,25 +178,7 @@ const Song = sequelize.define('songs', {
   },
 }, {
   defaultScope: {
-    include: [
-      {
-        model: Artist,
-        as: 'artist',
-        attributes: ['name']
-      },
-      {
-        model: Genre,
-        as: 'genre',
-        attributes: ['name']
-      },
-      {
-        model: Metadata,
-        as: 'metadata',
-        attributes: {
-          exclude: 'metadata_id'
-        }
-      }
-    ]
+    include: [{ all: true }]
   },
   createdAt: 'created_at',
   updatedAt: 'updated_at',
@@ -204,7 +187,7 @@ const Song = sequelize.define('songs', {
 });
 
 Song.hasOne(Artist, { as: 'artist', foreignKey: 'artist_id' });
-Song.hasMany(Genre, { as: 'genre', foreignKey: 'genre_id' });
+Song.belongsToMany(Genre, { through: SongGenres, foreignKey: 'song_id', otherKey: 'genre_id' });
 Song.hasOne(Language, { foreignKey: 'language_code' });
 Song.hasOne(Metadata, { as: 'metadata', foreignKey: 'metadata_id' });
 

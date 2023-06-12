@@ -58,6 +58,7 @@ export default function ArtistsPage() {
             name="name"
             placeholder="Artist Name"
             defaultValue={artists.find(a => a.artist_id == params.get('id'))?.name}
+            maxLength="64"
             required
           />
           <input
@@ -65,6 +66,7 @@ export default function ArtistsPage() {
             name="nationality"
             placeholder="Artist Nationality"
             defaultValue={artists.find(a => a.artist_id == params.get('id'))?.nationality}
+            maxLength="16"
             required
           />
           <div className="flex gap-2">

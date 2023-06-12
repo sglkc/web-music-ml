@@ -78,8 +78,8 @@ export default function Song(props) {
         <Td>{ props.language }</Td>
         <Td>
           <div className="flex flex-wrap gap-1">
-            { props.genre.map((genre, i) => (
-              <span className="p-1 b-1" key={i}>{ genre }</span>
+            { props.genres.map((genre, i) => (
+              <span className="p-1 b-1 text-sm" key={i}>{ genre }</span>
             ))}
           </div>
         </Td>
