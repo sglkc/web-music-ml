@@ -1,10 +1,13 @@
 import { useContext, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+import axios from 'axios'
 import { Context } from '../func/Reducer'
 import Metadata from './Metadata'
 
 const Td = (props) => (<td className="p-2" {...props} />)
 
 export default function Song(props) {
+  const navigate = useNavigate();
   const [metadata, setMetadata] = useState(false)
   const { reducer, dispatch } = useContext(Context)
 
@@ -27,6 +30,20 @@ export default function Song(props) {
         liveness: props.liveness
       }
     })
+  }
+
+  const edit = () => (navigate('/songs?id=' + props.song_id))
+
+  const remove = () => {
+    if (!confirm(`Hapus lagu ${props.title}?`)) return;
+
+    axios.delete('/api/songs/' + props.song_id)
+      .then(() => {
+        reducer.songs.splice(props.key, 1)
+        dispatch({ ...reducer, songs: [ ...reducer.songs ] })
+        alert(`Lagu ${props.title} sukses telah dihapus`)
+      })
+      .catch(alert)
   }
 
   return (
@@ -61,8 +78,8 @@ export default function Song(props) {
         <Td>{ props.language }</Td>
         <Td>
           <div className="flex flex-wrap gap-1">
-            { props.genre.map((genre, i) => (
-              <span className="p-1 b-1" key={i}>{ genre }</span>
+            { props.genres.map((genre, i) => (
+              <span className="p-1 b-1 text-sm" key={i}>{ genre }</span>
             ))}
           </div>
         </Td>
@@ -72,12 +89,12 @@ export default function Song(props) {
         <Td>
           <div className="flex gap-2 underline underline-from-font">
             <button
-              className="text-gray-600"
+              className="i-im:file-audio text-gray-600"
               onClick={() => setMetadata(!metadata)}
-            >
-              Metadata
-            </button>
-            <button className="text-green-800" onClick={similar}>Similar</button>
+            />
+            <button className="i-im:search text-blue-600" onClick={similar} />
+            <button className="i-im:edit text-green-600" onClick={edit} />
+            <button className="i-im:trash text-red-600" onClick={remove} />
           </div>
         </Td>
       </tr>

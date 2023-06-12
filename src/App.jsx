@@ -1,26 +1,39 @@
 import { useReducer } from 'react'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import { Context, Reducer } from './func/Reducer'
-import Clustering from './components/Clustering'
-import Recommender from './components/Recommender'
-import SongList from './components/SongList'
-import TableOptions from './components/TableOptions'
-import RecommendOptions from './components/RecommendOptions'
-import dataset from './dataset'
+import ArtistsPage from './pages/Artists'
+import SongsPage from './pages/Songs'
+import IndexPage from './pages/Index'
+
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <IndexPage />
+  },
+  {
+    path: '/songs',
+    element: <SongsPage />
+  },
+  {
+    path: '/artists',
+    element: <ArtistsPage />
+  }
+]);
 
 export default function App() {
   const defaults = {
     embed: false,
     image: false,
     metadata: false,
-    songs: dataset,
+    songs: [],
     info: {
-      popularity: 67,
-      energy: 75,
-      speechiness: 3,
+      popularity: 100,
+      energy: 0,
+      speechiness: 0,
       instrumentalness: 0,
-      danceability: 42,
-      positiveness: 44,
-      liveness: 16
+      danceability: 0,
+      positiveness: 0,
+      liveness: 0
     }
   }
 
@@ -28,17 +41,7 @@ export default function App() {
 
   return (
     <Context.Provider value={{ reducer, dispatch }}>
-      <div className="pt-4 pb-16 font-sans flex flex-col justify-center items-center gap-8">
-        <Clustering />
-        <div className="flex md:flex-row flex-col md:gap-16 gap-8">
-          <RecommendOptions />
-          <div className="flex flex-col gap-4">
-            <TableOptions />
-            <Recommender />
-          </div>
-        </div>
-        <SongList />
-      </div>
+      <RouterProvider router={router} />
     </Context.Provider>
   )
 }

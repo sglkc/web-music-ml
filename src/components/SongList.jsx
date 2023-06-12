@@ -12,7 +12,7 @@ export default function SongList() {
         <table>
           <thead>
             <tr>
-              <th className="p-2 sticky top-0 bg-gray-100 z-1">No.</th>
+              <th className="p-2 sticky top-0 bg-gray-100 z-1">ID</th>
               <th className="p-2 sticky top-0 bg-gray-100 z-1">Title</th>
               <th className="p-2 sticky top-0 bg-gray-100 z-1">Artist</th>
               <th className="p-2 sticky top-0 bg-gray-100 z-1">URL</th>
