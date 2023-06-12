@@ -48,11 +48,13 @@ export default function ArtistsPage() {
       <h1 className="font-bold text-lg text-center">Artists CRUD</h1>
       <div className="mt-4 mb-16 flex flex-col justify-center gap-8">
         <form className="mx-auto flex flex-col gap-2" onSubmit={submit}>
+          { params.get('id') &&
           <input
             className="hidden"
             name="artist_id"
             value={params.get('id')}
           />
+          }
           <input
             className="p-2 b-2 rounded-2"
             name="name"

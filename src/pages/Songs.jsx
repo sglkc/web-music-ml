@@ -102,7 +102,7 @@ export default function SongsPage() {
           <input
             className="p-2 b-2 rounded-2"
             name="genres"
-            placeholder="Genres"
+            placeholder="Genres (xxx,yyy,...)"
             defaultValue={data.song?.genres?.join(',')}
             autoComplete="off"
             required
