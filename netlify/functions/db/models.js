@@ -110,30 +110,6 @@ const Genre = sequelize.define('genres', {
   timestamps: false
 });
 
-const SongGenres = sequelize.define('songgenres', {
-  song_id: {
-    type: DataTypes.INTEGER,
-    allowNull: false,
-    primaryKey: true,
-    references: {
-      model: Song,
-      key: 'song_id',
-    }
-  },
-  genre_id: {
-    type: DataTypes.INTEGER,
-    allowNull: false,
-    primaryKey: true,
-    references: {
-      model: Genre,
-      key: 'genre_id',
-    }
-  },
-}, {
-  tableName: 'songgenres',
-  timestamps: false
-});
-
 const Song = sequelize.define('songs', {
   song_id: {
     type: DataTypes.INTEGER,
@@ -186,6 +162,30 @@ const Song = sequelize.define('songs', {
   updatedAt: 'updated_at',
   underscored: true,
   tableName: 'songs'
+});
+
+const SongGenres = sequelize.define('songgenres', {
+  song_id: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+    primaryKey: true,
+    references: {
+      model: Song,
+      key: 'song_id',
+    }
+  },
+  genre_id: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+    primaryKey: true,
+    references: {
+      model: Genre,
+      key: 'genre_id',
+    }
+  },
+}, {
+  tableName: 'songgenres',
+  timestamps: false
 });
 
 Song.hasOne(Artist, { as: 'artist', foreignKey: 'artist_id' });
