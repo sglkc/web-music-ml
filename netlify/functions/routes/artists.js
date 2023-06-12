@@ -1,9 +1,9 @@
 import { Router } from 'express';
 import { Artist } from '../db/models';
 
-const ArtistsRouter = Router();
+const router = Router();
 
-ArtistsRouter.get('/', async (_, res) => {
+router.get('/', async (_, res) => {
   try {
     const artists = await Artist.findAll();
     return res.status(200).send([ ...artists ]);
@@ -12,7 +12,7 @@ ArtistsRouter.get('/', async (_, res) => {
   }
 });
 
-ArtistsRouter.get('/:artist_id', async (req, res) => {
+router.get('/:artist_id', async (req, res) => {
   const { artist_id } = req.params;
 
   if (!artist_id) return res.status(500).send({ error: 'artist_id is required' });
@@ -25,7 +25,7 @@ ArtistsRouter.get('/:artist_id', async (req, res) => {
   }
 });
 
-ArtistsRouter.post('/', async (req, res) => {
+router.post('/', async (req, res) => {
   try {
     const artist = await Artist.create(req.body);
     return res.status(200).send(artist.toJSON());
@@ -34,7 +34,7 @@ ArtistsRouter.post('/', async (req, res) => {
   }
 });
 
-ArtistsRouter.patch('/:artist_id', async (req, res) => {
+router.patch('/:artist_id', async (req, res) => {
   const { artist_id } = req.params;
 
   if (!artist_id) return res.status(500).send({ error: 'artist_id is required' });
@@ -49,7 +49,7 @@ ArtistsRouter.patch('/:artist_id', async (req, res) => {
   }
 });
 
-ArtistsRouter.delete('/:artist_id', async (req, res) => {
+router.delete('/:artist_id', async (req, res) => {
   const { artist_id } = req.params;
 
   if (!artist_id) return res.status(500).send({ error: 'artist_id is required' });
@@ -62,4 +62,4 @@ ArtistsRouter.delete('/:artist_id', async (req, res) => {
   }
 });
 
-export default ArtistsRouter;
+export const ArtistsRouter = router;

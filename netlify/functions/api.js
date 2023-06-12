@@ -1,8 +1,8 @@
 import bodyParser from 'body-parser';
 import serverless from 'serverless-http';
 import express from 'express';
-import ArtistsRouter from './routes/artists';
-import SongsRouter from './routes/songs';
+import { ArtistsRouter } from './routes/artists';
+import { SongsRouter } from './routes/songs';
 
 const api = express();
 const router = express.Router();
