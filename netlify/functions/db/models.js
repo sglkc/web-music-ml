@@ -94,10 +94,12 @@ const Genre = sequelize.define('genres', {
   },
   subgenre_id: {
     type: DataTypes.INTEGER,
+    /*
     references: {
       model: Genre,
       key: 'genre_id',
     }
+    */
   },
   name: {
     type: DataTypes.STRING(32),
