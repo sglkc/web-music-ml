@@ -1,14 +1,14 @@
 import bodyParser from 'body-parser';
 import serverless from 'serverless-http';
 import express from 'express';
-import artists from './routes/artists';
-import songs from './routes/songs';
+import ArtistsRouter from './routes/artists';
+import SongsRouter from './routes/songs';
 
 const api = express();
 const router = express.Router();
 
-router.use('/artists', artists);
-router.use('/songs', songs);
+router.use('/artists', ArtistsRouter);
+router.use('/songs', SongsRouter);
 
 api.use(bodyParser.json());
 api.use(bodyParser.urlencoded({ extended: true }));

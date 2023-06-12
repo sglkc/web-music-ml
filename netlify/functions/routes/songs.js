@@ -1,9 +1,9 @@
 import { Router } from 'express';
 import { Song, SongGenres, Metadata, Artist, Genre, Language } from '../db/models';
 
-const router = Router();
+const SongsRouter = Router();
 
-router.get('/', async (_, res) => {
+SongsRouter.get('/', async (_, res) => {
   try {
     const artists = await Artist.findAll();
     const songs = await Song.findAll();
@@ -34,7 +34,7 @@ router.get('/', async (_, res) => {
   }
 });
 
-router.get('/form', async (_, res) => {
+SongsRouter.get('/form', async (_, res) => {
   try {
     const artists = await Artist.findAll();
     const genres = await Genre.findAll();
@@ -46,7 +46,7 @@ router.get('/form', async (_, res) => {
   }
 });
 
-router.get('/:song_id', async (req, res) => {
+SongsRouter.get('/:song_id', async (req, res) => {
   const { song_id } = req.params;
 
   if (!song_id) return res.status(500).send({ error: 'song_id is required' });
@@ -75,7 +75,7 @@ router.get('/:song_id', async (req, res) => {
   }
 });
 
-router.post('/', async (req, res) => {
+SongsRouter.post('/', async (req, res) => {
   try {
     const metadatas = {
       tempo: req.body.tempo,
@@ -117,7 +117,7 @@ router.post('/', async (req, res) => {
 
 });
 
-router.patch('/:song_id', async (req, res) => {
+SongsRouter.patch('/:song_id', async (req, res) => {
   const { song_id } = req.params;
 
   if (!song_id) return res.status(500).send({ error: 'song_id is required' });
@@ -165,7 +165,7 @@ router.patch('/:song_id', async (req, res) => {
   }
 });
 
-router.delete('/:song_id', async (req, res) => {
+SongsRouter.delete('/:song_id', async (req, res) => {
   const { song_id } = req.params;
 
   if (!song_id) return res.status(500).send({ error: 'song_id is required' });
@@ -183,4 +183,4 @@ router.delete('/:song_id', async (req, res) => {
   }
 });
 
-export default router;
+export default SongsRouter;
