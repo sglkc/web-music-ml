@@ -1,5 +1,8 @@
 # Web Music ML
 
+[GitHub](https://github.com/sglkc/web-music-ml)
+[Website](https://basdat.sglkc.my.id)
+
 Projek ini dibuat untuk melengkapi tugas akhir semester untuk pelajaran
 Pengantar Sains Data dan Basis Data.
 
@@ -65,3 +68,16 @@ password: process.env.DB_PASS || ''
 host: process.env.DB_HOST || 'localhost'
 port: process.env.DB_PORT || 3306
 ```
+
+## Dataset
+
+Dataset statik terdapat di file [dataset.js](/src/dataset.js). Aplikasi yang
+bekerja hanya client-side dapat diakses pada branch [static](https://github.com/sglkc/web-music-ml/tree/static).
+
+## Migration
+
+File untuk migrasi database dapat dibuka di [migration.sql](/netlify/functions/db/migration.sql).
+
+## License
+
+Distributed under the MIT License. See [LICENSE](LICENSE) for more information.
